@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hello = findViewById(R.id.hello);
-        hello.setText("Welcome");
+        hello.setText(Singleton.getInstance().myName);
         nameInputField = findViewById(R.id.editTextText);
         click = findViewById(R.id.button);
         click.setOnClickListener(this);
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         //System.out.println("Click: " + hello.getText().toString());
         //Log.d("my label", "my message"); //Alternative to System.out.println
-        String name = nameInputField.getText().toString();
-        hello.setText("Welcome " + name + "!");
+        Singleton.getInstance().myName = "Welcome" + nameInputField.getText().toString();
+        hello.setText(Singleton.getInstance().myName);
 
 
     }
