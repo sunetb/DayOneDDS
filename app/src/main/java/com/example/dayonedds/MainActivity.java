@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Thread myThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                String s = readURL("https://www.ruc.dk");
+                String s = readURL("https://raw.githubusercontent.com/sunetb/U/main/greeting.txt");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
